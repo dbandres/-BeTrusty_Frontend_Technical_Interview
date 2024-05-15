@@ -17,7 +17,6 @@ export const Navbar = () => {
     tablet:bg-[#000000] 
     tablet:w-[90px] 
     tablet:h-[100vh] 
-    tablet:flex 
     tablet:justify-start 
     tablet:items-center 
     tablet:flex-col
