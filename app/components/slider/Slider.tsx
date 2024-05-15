@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { imgs } from "./images"
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import arrowR from '../../assets/ArrowRight.png'
 import arrowL from '../../assets/ArrowLeft.png'
 
@@ -23,7 +23,7 @@ export const Slider = () => {
   }
 
   return (
-    <div className="w-full h-[27vh] flex justify-center items-center gap-4 transition-transform ease-in-out duration-500">
+    <div className="flex justify-center items-center transition-transform ease-in-out duration-500">
       {
         imgs.map((pic, index) => (
           <div key={pic.id} className={`${index === activeimage
