@@ -11,7 +11,21 @@ export const ModalPicker = ({ isOpen, onOpenChange, setCheckin, setCheckout }: {
           <>
             <ModalHeader className="flex flex-col gap-1">Elija el periodo de su estadia</ModalHeader>
             <ModalBody>
-              <div className=" flex justify-center">
+              <div className=" flex justify-center phone:flex tablet:hidden">
+                <RangeCalendar
+                  aria-label="Date (Uncontrolled)"
+                  defaultValue={{
+                    start: today(getLocalTimeZone()),
+                    end: today(getLocalTimeZone()),
+                  }}
+                  minValue={today(getLocalTimeZone())}
+                  onChange={(value) => {
+                    setCheckin(value.start);
+                    setCheckout(value.end);
+                  }}
+                />
+              </div>
+              <div className=" flex justify-center phone:hidden tablet:flex">
                 <RangeCalendar
                   aria-label="Date (Uncontrolled)"
                   defaultValue={{

@@ -19,6 +19,7 @@ export const Navbar = () => {
     tablet:justify-start 
     tablet:items-center 
     tablet:flex-col
+    tablet:fixed
     phone:bg-[#000000] 
       phone:absolute 
       phone:h-[75] 
