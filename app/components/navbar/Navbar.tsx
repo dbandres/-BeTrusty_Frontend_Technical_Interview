@@ -7,10 +7,9 @@ import qr from '../../assets/menuIcons/QrCode.png'
 import llave from '../../assets/menuIcons/llave.png'
 import notif from '../../assets/menuIcons/Notifications.png'
 import settings from '../../assets/menuIcons/Settings.png'
+import Link from "next/link"
 
 export const Navbar = () => {
-
-  const arreglo = [1, 2, 3, 4, 5, 6]
 
   return (
     <div className="
@@ -56,13 +55,15 @@ export const Navbar = () => {
         phone:h-[40px] 
         phone:flex-row 
         phone:flex 
-        phone:justify-between">
-          <Image
-            src={inicio}
-            height={40}
-            width={40}
-            alt="menu"
-          />
+        phone:justify-around">
+          <Link href='/'>
+            <Image
+              src={inicio}
+              height={40}
+              width={40}
+              alt="menu"
+            />
+          </Link>
           <Image
             src={credencial}
             height={40}
@@ -95,13 +96,15 @@ export const Navbar = () => {
             width={40}
             alt="menu"
           />
-          <Image
-            src={settings}
-            height={40}
-            width={40}
-            alt="menu"
-            className="tablet:absolute tablet:bottom-4"
-          />
+          <Link href='/config'>
+            <Image
+              src={settings}
+              height={40}
+              width={40}
+              alt="menu"
+              className="tablet:absolute tablet:bottom-4"
+            />
+          </Link>
         </div>
       </div>
     </div>
