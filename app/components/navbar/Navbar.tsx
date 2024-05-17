@@ -1,15 +1,25 @@
 import Image from "next/image"
-import menu from '../../assets/menuIcons/top.png'
-import inicio from '../../assets/menuIcons/inicio.png'
-import credencial from '../../assets/menuIcons/Identification.png'
-import dash from '../../assets/menuIcons/Dashboard.png'
-import qr from '../../assets/menuIcons/QrCode.png'
-import llave from '../../assets/menuIcons/llave.png'
-import notif from '../../assets/menuIcons/Notifications.png'
-import settings from '../../assets/menuIcons/Settings.png'
+import menu from '../../public/menuIcons/top.png'
 import Link from "next/link"
+import { menuItems } from './utils';
 
 export const Navbar = () => {
+
+  const itemsRender = () => {
+    return (
+      menuItems.map((menu) => (
+        <Link key={menu.id} href={menu.href}>
+          <Image
+            src={menu.img}
+            height={40}
+            width={40}
+            alt="menu"
+            className={`${menu.className}`}
+          />
+        </Link>
+      ))
+    )
+  }
 
   return (
     <div className="
@@ -57,55 +67,10 @@ export const Navbar = () => {
         phone:flex-row 
         phone:flex 
         phone:justify-around">
-          <Link href='/'>
-            <Image
-              src={inicio}
-              height={40}
-              width={40}
-              alt="menu"
-            />
-          </Link>
-          <Image
-            src={credencial}
-            height={40}
-            width={40}
-            alt="menu"
-            className="phone:hidden tablet:block"
-          />
-          <Image
-            src={dash}
-            height={40}
-            width={40}
-            alt="menu"
-          />
-          <Image
-            src={qr}
-            height={40}
-            width={40}
-            alt="menu"
-          />
-          <Image
-            src={llave}
-            height={40}
-            width={40}
-            alt="menu"
-            className="phone:hidden tablet:block"
-          />
-          <Image
-            src={notif}
-            height={40}
-            width={40}
-            alt="menu"
-          />
-          <Link href='/config'>
-            <Image
-              src={settings}
-              height={40}
-              width={40}
-              alt="menu"
-              className="tablet:absolute tablet:bottom-4"
-            />
-          </Link>
+
+        {
+          itemsRender()
+        }
         </div>
       </div>
     </div>
